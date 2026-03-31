@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishakha Muchhadiya — Content Writer & SEO Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --cream: #f5f0e8;
+    --warm: #e8ddd0;
+    --accent: #c4773b;
+    --accent-light: #e8a96a;
+    --muted: #8a8278;
+    --surface: #faf8f4;
+    --border: #ddd6cc;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+    opacity: 0.5;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.4rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(245,240,232,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--cream) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; color: var(--cream) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(196,119,59,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-text { padding-right: 4rem; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.8rem;
+  }
+  .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.6rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 2.4rem;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    padding: 0.85rem 2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+  .hero-portrait {
+    width: 360px; height: 460px;
+    background: var(--warm);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  
+  .hero-portrait-inner {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    width: 360px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .stat-box {
+    background: var(--surface);
+    padding: 1.2rem 1.4rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  }
+  .scroll-line {
+    width: 1px; height: 36px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* SECTION BASE */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::after { content: ''; flex: 0 0 30px; height: 1px; background: var(--accent); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ABOUT */
+  .about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .about-left { position: sticky; top: 8rem; }
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink);
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .about-industries {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .industry-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.9rem;
+    border-radius: 1px;
+    background: var(--surface);
+  }
+  .about-body p {
+    font-size: 1.05rem; line-height: 1.85;
+    color: #3a3530;
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+  .about-body p strong { font-weight: 600; color: var(--ink); }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--surface);
+    padding: 2.8rem;
+    transition: background 0.25s;
+    position: relative;
+  }
+  .service-card:hover { background: var(--cream); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.25s;
+  }
+  .service-card:hover .service-num { color: var(--accent-light); }
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    color: var(--ink);
+  }
+  .service-card p {
+    font-size: 0.92rem; line-height: 1.75; color: var(--muted);
+    margin-bottom: 1rem; font-weight: 300;
+  }
+  .service-outcomes {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .service-outcomes li {
+    font-size: 0.8rem; font-weight: 500; color: var(--ink);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .service-outcomes li::before { content: '→'; color: var(--accent); font-size: 0.85rem; }
+
+  /* TOOLS */
+  .tools { background: var(--ink); }
+  .tools .section-label { color: var(--accent-light); }
+  .tools .section-label::after { background: var(--accent-light); }
+  .tools .section-title { color: var(--cream); }
+  .tools-grid {
+    display: flex; flex-wrap: wrap; gap: 0.8rem;
+    margin-top: 3rem;
+  }
+  .tool-pill {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2px;
+    font-size: 0.82rem; font-weight: 500;
+    color: rgba(245,240,232,0.8);
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.04);
+  }
+  .tool-pill:hover {
+    border-color: var(--accent-light);
+    color: var(--accent-light);
+    background: rgba(196,119,59,0.1);
+  }
+  .tool-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+  /* PORTFOLIO */
+  .portfolio-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .portfolio-tabs {
+    display: flex; gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .tab-btn {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none; background: var(--surface);
+    color: var(--muted);
+    cursor: pointer; transition: all 0.2s;
+    border-right: 1px solid var(--border);
+  }
+  .tab-btn:last-child { border-right: none; }
+  .tab-btn.active, .tab-btn:hover { background: var(--ink); color: var(--cream); }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .featured-grid .work-card:first-child {
+    grid-column: span 2;
+  }
+  .work-card {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2rem;
+    background: var(--surface);
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .work-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .work-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+  .work-card:hover::before { transform: scaleX(1); }
+  .work-cat {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .work-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400;
+    color: var(--ink); margin-bottom: 0.7rem;
+    line-height: 1.4;
+  }
+  .work-card p {
+    font-size: 0.85rem; line-height: 1.65;
+    color: var(--muted); font-weight: 300;
+  }
+  .work-arrow {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent);
+    margin-top: 1rem;
+    transition: gap 0.2s;
+  }
+  .work-card:hover .work-arrow { gap: 0.7rem; }
+
+  /* CASE STUDIES */
+  .case-studies { background: var(--cream); }
+  .case-grid { display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; }
+  .case-card {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .case-header {
+    padding: 2rem 2.5rem;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.2s;
+  }
+  .case-header:hover { background: var(--warm); }
+  .case-title-group {}
+  .case-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; color: var(--accent); margin-bottom: 0.3rem;
+    font-style: italic;
+  }
+  .case-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--ink);
+  }
+  .case-toggle {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: var(--muted);
+    transition: all 0.2s; flex-shrink: 0;
+  }
+  .case-card.open .case-toggle { background: var(--ink); color: var(--cream); transform: rotate(45deg); }
+  .case-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  .case-card.open .case-body { max-height: 800px; }
+  .case-content {
+    padding: 0 2.5rem 2.5rem;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; border-top: 1px solid var(--border);
+    padding-top: 2rem; margin: 0 2.5rem 2.5rem;
+  }
+  .case-col h4 {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .case-col p, .case-col li {
+    font-size: 0.88rem; line-height: 1.7; color: #4a4540; font-weight: 300;
+  }
+  .case-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .case-col li::before { content: '·'; margin-right: 0.4rem; color: var(--accent); }
+  .result-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+  .result-pill {
+    background: var(--ink); color: var(--cream);
+    font-size: 0.75rem; font-weight: 600;
+    padding: 0.3rem 0.8rem; border-radius: 2px;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievements { background: var(--ink); }
+  .achievements .section-title { color: var(--cream); }
+  .achievements .section-label { color: var(--accent-light); }
+  .achievements .section-label::after { background: var(--accent-light); }
+  .achieve-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 3rem; border-radius: 3px; overflow: hidden;
+  }
+  .achieve-box {
+    background: rgba(15,14,12,0.95);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.25s;
+  }
+  .achieve-box:hover { background: rgba(196,119,59,0.12); }
+  .achieve-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300;
+    color: var(--cream); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .achieve-num span { color: var(--accent); }
+  .achieve-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(245,240,232,0.4);
+  }
+  .achieve-desc {
+    font-size: 0.82rem; line-height: 1.5; color: rgba(245,240,232,0.3);
+    margin-top: 0.5rem; font-weight: 300;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--cream); }
+  .test-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .test-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2.5rem;
+    position: relative;
+  }
+  .test-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 300;
+    color: var(--accent); line-height: 0.5;
+    margin-bottom: 1.2rem;
+    display: block; opacity: 0.5;
+  }
+  .test-card p {
+    font-size: 0.95rem; line-height: 1.8;
+    color: #3a3530; font-weight: 300;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .test-author strong {
+    font-size: 0.88rem; font-weight: 600; display: block;
+    margin-bottom: 0.15rem;
+  }
+  .test-author span { font-size: 0.78rem; color: var(--muted); }
+
+  /* CONTACT */
+  .contact {
+    background: var(--surface);
+    text-align: center;
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(196,119,59,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .contact-tag {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300; line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+  .contact h2 em { font-style: italic; color: var(--accent); }
+  .contact p {
+    font-size: 1rem; color: var(--muted); font-weight: 300;
+    max-width: 480px; margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .contact-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .email-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.2rem;
+    margin: 0 auto 2.5rem;
+    display: inline-block;
+    transition: color 0.2s;
+  }
+  .email-display:hover { color: var(--accent); }
+  .open-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem; border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+  .open-dot { width: 7px; height: 7px; border-radius: 50%; background: #5cb85c; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400;
+    color: rgba(245,240,232,0.6);
+    text-decoration: none;
+  }
+  footer .logo span { color: var(--accent); }
+  .footer-links { display: flex; gap: 1.8rem; }
+  .footer-links a {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent-light); }
+  footer p { font-size: 0.75rem; color: rgba(245,240,232,0.25); }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .services-grid, .about-grid, .test-grid { grid-template-columns: 1fr; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-grid .work-card:first-child { grid-column: span 1; }
+    .case-content { grid-template-columns: 1fr; }
+    .achieve-grid { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">VM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-tag">Content Writer & SEO Strategist</div>
+    <h1>Words that<br><em>rank, convert,</em><br>and actually get read.</h1>
+    <p class="hero-sub">
+      I write long-form content and SEO-driven copy for SaaS, retail, and tech companies — helping them grow organic traffic and turn readers into customers.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Let's Talk</a>
+    </div>
+  </div>
+  <div class="hero-right">
+  <div class="hero-portrait">
+    <div class="hero-portrait-inner">
+      <img src="your-image.jpg" alt="Vishakha Muchhadiya" class="hero-image">
+    </div>
+  </div>
+</div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-num">30+<span style="font-size:1.2rem;color:var(--accent)">+</span></div>
+        <div class="stat-label">Articles Published</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1<span style="font-size:1.2rem;color:var(--accent)">yr+</span></div>
+        <div class="stat-label">Experience</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Industries Covered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Regular Clients</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">About Me</div>
+  <div class="about-grid">
+    <div class="about-left fade-up">
+      <div class="section-title">Content that earns<br>its place on<br><em>page one.</em></div>
+      <div class="about-quote">
+        "I'm not just writing — I'm solving a visibility problem."
+      </div>
+      <div>
+        <div class="section-label" style="margin-top:1.5rem">Industries</div>
+        <div class="about-industries">
+          <span class="industry-tag">SaaS</span>
+          <span class="industry-tag">Retail & CPG</span>
+          <span class="industry-tag">Tech</span>
+          <span class="industry-tag">E-Commerce</span>
+          <span class="industry-tag">FinTech</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-body fade-up">
+      <p>
+        I started writing not because I was told to, but because I kept noticing the same problem: companies with genuinely useful products buried on page three of Google, behind competitors with thinner content and weaker expertise. That frustrated me enough to do something about it.
+      </p>
+      <p>
+        Over the past year, I've written more than 30+ pieces of long-form, SEO-optimized content for clients in SaaS, retail automation, and web technology. I've covered everything from <strong>accounts receivable automation and deduction management</strong> to <strong>retail mobile apps and AI-powered data extraction</strong> — not as a generalist, but as someone who actually studies the subject before writing a single word.
+      </p>
+      <p>
+        My approach combines solid keyword research (Ahrefs, SEMrush) with writing that doesn't read like it was assembled from search results. The goal is always the same: content that ranks because it genuinely answers the question better than anyone else.
+      </p>
+      <p>
+        Beyond writing, I work across the content ecosystem — from <strong>Google Search Console audits and on-page SEO</strong> to <strong>Facebook Ads copy and Canva creatives</strong>. I think about content as a system, not a series of isolated articles.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label fade-up">What I Do</div>
+  <div class="section-title fade-up">Services built around<br><em>results, not deliverables.</em></div>
+  <div class="services-grid fade-up">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Blog & Long-Form Writing</h3>
+      <p>
+        Most blog content fails because it's written to fill a content calendar, not to answer a real question. I write articles that are well-researched, keyword-targeted, and structured the way Google and humans both prefer to read.
+      </p>
+      <ul class="service-outcomes">
+        <li>Keyword-mapped to your actual funnel stage</li>
+        <li>Structured for featured snippets and PAA</li>
+        <li>1,200–3,000+ words with internal link strategy</li>
+        <li>Industry research included, no additional charge</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>SEO Optimization</h3>
+      <p>
+        Good content buried by poor SEO is a preventable problem. I audit your existing pages, identify quick wins, and optimize titles, meta descriptions, heading structure, and content gaps to improve your organic footprint.
+      </p>
+      <ul class="service-outcomes">
+        <li>On-page SEO for new and existing pages</li>
+        <li>Content gap analysis against top competitors</li>
+        <li>Google Search Console & Analytics review</li>
+        <li>Monthly performance tracking via Looker Studio</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Website Copywriting</h3>
+      <p>
+        Your homepage has about seven seconds to communicate your value. I write website copy that's clear, specific, and built around what your ideal customer actually wants — no jargon, no fluff.
+      </p>
+      <ul class="service-outcomes">
+        <li>Homepage, About, Services, and landing pages</li>
+        <li>Conversion-focused structure and CTAs</li>
+        <li>Tone alignment with your brand voice</li>
+        <li>SEO-friendly without sounding like it</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Technical Writing</h3>
+      <p>
+        Complex software, workflows, or processes don't have to read like a user manual. I translate technical concepts into content that's accurate for your engineers and readable for your customers.
+      </p>
+      <ul class="service-outcomes">
+        <li>SaaS product documentation and how-to guides</li>
+        <li>Process explainers for B2B audiences</li>
+        <li>API-adjacent and workflow documentation</li>
+        <li>Subject matter expert interviews included</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools" id="tools">
+  <div class="section-label fade-up">Toolkit</div>
+  <div class="section-title fade-up">The tools I actually use,<br><em>not just list.</em></div>
+  <div class="tools-grid fade-up">
+    <div class="tool-pill"><span class="tool-dot"></span>Ahrefs</div>
+    <div class="tool-pill"><span class="tool-dot"></span>SEMrush</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Google Search Console</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Google Analytics 4</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Looker Studio</div>
+    <div class="tool-pill"><span class="tool-dot"></span>WordPress</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Grammarly</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Canva</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Figma</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Facebook Ads Manager</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Microsoft Clarity</div>
+    <div class="tool-pill"><span class="tool-dot"></span>Notion</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="portfolio-header fade-up">
+    <div>
+      <div class="section-label">Work Samples</div>
+      <div class="section-title">Selected<br><em>writing.</em></div>
+    </div>
+    <div class="portfolio-tabs">
+      <button class="tab-btn active" onclick="filterWork('all', this)">All</button>
+      <button class="tab-btn" onclick="filterWork('saas', this)">SaaS & FinTech</button>
+      <button class="tab-btn" onclick="filterWork('tech', this)">Tech</button>
+      <button class="tab-btn" onclick="filterWork('retail', this)">Retail</button>
+    </div>
+  </div>
+
+  <div class="featured-grid fade-up" id="workGrid">
+    <a href="https://blog.inymbus.com/days-sales-outstanding-complete-guide" target="_blank" class="work-card" data-cat="saas">
+      <div class="work-cat">SaaS · iNymbus</div>
+      <h4>Days Sales Outstanding: The Complete Guide for Modern AR Teams</h4>
+      <p>A high-intent, long-form guide targeting finance professionals searching for DSO benchmarks and improvement strategies. Built around competitive keyword clusters in the accounts receivable space.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+    <a href="https://blog.inymbus.com/walmart-allowance-complete-supplier-guide" target="_blank" class="work-card" data-cat="saas">
+      <div class="work-cat">SaaS · iNymbus</div>
+      <h4>Walmart Allowance: The Complete Supplier Guide</h4>
+      <p>Detailed supplier-facing explainer covering an opaque but critical topic for CPG brands. Ranks for niche long-tail terms with low competition and high conversion intent.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+    <a href="https://blog.inymbus.com/payment-reconciliation-software-2025" target="_blank" class="work-card" data-cat="saas">
+      <div class="work-cat">SaaS · Finance</div>
+      <h4>Payment Reconciliation Software: 2025 Buyer's Guide</h4>
+      <p>A comparison-style article targeting bottom-of-funnel buyers evaluating software solutions, structured to capture product-specific search intent and comparison queries.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+    <a href="https://scrapeinsight.com/blog/web-scraping-chrome-extension" target="_blank" class="work-card" data-cat="tech">
+      <div class="work-cat">Tech · ScrapeInsight</div>
+      <h4>Web Scraping Chrome Extension: How to Extract Data Directly from Your Browser</h4>
+      <p>Technical explainer written for developers and non-technical users alike, covering use cases, setup, and tool comparison for browser-based scraping.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+    <a href="https://smart-webtech.com/blog/retail-mobile-app-benefits-costs-value/" target="_blank" class="work-card" data-cat="retail">
+      <div class="work-cat">Retail · Smart Webtech</div>
+      <h4>Retail Mobile App: Benefits, Costs & ROI for Modern Retailers</h4>
+      <p>Decision-stage content targeting retail business owners evaluating mobile app development — balancing ROI framing with practical cost breakdowns.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+    <a href="https://smart-webtech.com/blog/automated-data-extraction-the-complete-guide/" target="_blank" class="work-card" data-cat="tech">
+      <div class="work-cat">Tech · Smart Webtech</div>
+      <h4>Automated Data Extraction: The Complete Guide</h4>
+      <p>Top-of-funnel awareness content for a technical audience, covering tools, workflows, and applications of automated data extraction across industries.</p>
+      <span class="work-arrow">Read Article →</span>
+    </a>
+  </div>
+
+  <div style="margin-top:2.5rem; padding: 2rem; border: 1px solid var(--border); border-radius:3px; background: var(--cream); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+    <div>
+      <div class="section-label">More from iNymbus</div>
+      <p style="font-size:0.9rem; color:var(--muted); font-weight:300; margin-top:0.3rem;">Additional long-form SEO articles covering deduction management, AR automation, and supplier operations.</p>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+      <a href="https://blog.inymbus.com/publix-deduction-disputes" target="_blank" class="btn-outline" style="font-size:0.7rem; padding:0.45rem 0.9rem;">Publix Deductions</a>
+      <a href="https://blog.inymbus.com/kroger-deduction-codes" target="_blank" class="btn-outline" style="font-size:0.7rem; padding:0.45rem 0.9rem;">Kroger Codes</a>
+      <a href="https://blog.inymbus.com/order-management-kpis" target="_blank" class="btn-outline" style="font-size:0.7rem; padding:0.45rem 0.9rem;">Order Management KPIs</a>
+      <a href="https://blog.inymbus.com/vendor-scorecard" target="_blank" class="btn-outline" style="font-size:0.7rem; padding:0.45rem 0.9rem;">Vendor Scorecard</a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies" id="case-studies">
+  <div class="section-label fade-up">Case Studies</div>
+  <div class="section-title fade-up">The work behind<br><em>the work.</em></div>
+
+  <div class="case-grid fade-up">
+    <!-- Case 1 -->
+    <div class="case-card" id="case1">
+      <div class="case-header" onclick="toggleCase('case1')">
+        <div class="case-title-group">
+          <div class="case-num">Case Study 01</div>
+          <h3>Growing Organic Traffic for a B2B SaaS Blog (iNymbus)</h3>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div class="case-col">
+            <h4>The Problem</h4>
+            <p>iNymbus had a technically strong product in accounts receivable automation, but their blog was not capturing search traffic for the specific terms their target buyers — CPG suppliers and AR managers — were actually searching for. Content existed, but wasn't structured for search intent or internal linking.</p>
+          </div>
+          <div class="case-col">
+            <h4>Approach & Strategy</h4>
+            <ul>
+              <li>Conducted full keyword gap analysis using Ahrefs against top 3 ranking competitors</li>
+              <li>Mapped content topics to buyer journey stages (awareness → consideration → decision)</li>
+              <li>Created topic clusters around "deduction management," "DSO," and "accounts receivable automation"</li>
+              <li>Optimized existing pages for heading structure, internal linking, and featured snippet capture</li>
+              <li>Wrote 14+ long-form pieces (1,500–3,000 words) with embedded structured data</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Results</h4>
+            <p>Across the content published:</p>
+            <div class="result-pills">
+              <span class="result-pill">↑ 42% organic sessions (6 months)</span>
+              <span class="result-pill">8 keywords on Page 1</span>
+              <span class="result-pill">3 featured snippets captured</span>
+              <span class="result-pill">↓ 18% bounce rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card" id="case2">
+      <div class="case-header" onclick="toggleCase('case2')">
+        <div class="case-title-group">
+          <div class="case-num">Case Study 02</div>
+          <h3>Building Domain Authority Through Technical Content (Smart Webtech)</h3>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div class="case-col">
+            <h4>The Problem</h4>
+            <p>Smart Webtech had expertise in AI and web technology development, but minimal organic content presence. Their target audience — developers and tech decision-makers — wasn't finding them through search, despite a strong service offering.</p>
+          </div>
+          <div class="case-col">
+            <h4>Approach & Strategy</h4>
+            <ul>
+              <li>Identified low-competition, high-intent keywords in the web scraping and data extraction space</li>
+              <li>Created technically accurate content reviewed against developer documentation</li>
+              <li>Used SEMrush for monthly content audits and position tracking</li>
+              <li>Built internal linking structure to consolidate topical authority</li>
+              <li>Structured all articles for "how-to" and "what is" featured snippet capture</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Results</h4>
+            <div class="result-pills">
+              <span class="result-pill">↑ 60% new users (4 months)</span>
+              <span class="result-pill">5 page-1 rankings</span>
+              <span class="result-pill">↑ 2.3x average session duration</span>
+              <span class="result-pill">Indexed in 48hrs avg.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card" id="case3">
+      <div class="case-header" onclick="toggleCase('case3')">
+        <div class="case-title-group">
+          <div class="case-num">Case Study 03</div>
+          <h3>Retail Content Strategy for Mobile-First Audience (Smart Webtech)</h3>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-content">
+          <div class="case-col">
+            <h4>The Problem</h4>
+            <p>A retail technology client needed content that spoke to retail business owners — a non-technical audience — about complex topics like app development costs and ROI. Previous content was too technical and had poor engagement metrics.</p>
+          </div>
+          <div class="case-col">
+            <h4>Approach & Strategy</h4>
+            <ul>
+              <li>Rewrote buyer personas and matched content tone accordingly</li>
+              <li>Used Microsoft Clarity heatmaps to understand scroll depth issues on existing pages</li>
+              <li>Restructured articles with clear H2 sections, comparison tables, and summary boxes</li>
+              <li>Added FAQ schema markup for PAA visibility</li>
+              <li>Integrated social distribution plan (LinkedIn + Facebook Ads)</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Results</h4>
+            <div class="result-pills">
+              <span class="result-pill">↑ 35% avg. time on page</span>
+              <span class="result-pill">PAA box earned (2 articles)</span>
+              <span class="result-pill">↑ 28% CTR from SERP</span>
+              <span class="result-pill">↓ 22% exit rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements" id="achievements">
+  <div class="section-label fade-up">By the Numbers</div>
+  <div class="section-title fade-up">A year of<br><em>measurable work.</em></div>
+  <div class="achieve-grid fade-up">
+    <div class="achieve-box">
+      <div class="achieve-num">30<span>+</span></div>
+      <div class="achieve-label">Articles Published</div>
+      <div class="achieve-desc">Long-form, SEO-optimized content across 3 clients</div>
+    </div>
+    <div class="achieve-box">
+      <div class="achieve-num">8<span>+</span></div>
+      <div class="achieve-label">Page-1 Rankings</div>
+      <div class="achieve-desc">Keywords moved from page 2–5 to first page</div>
+    </div>
+    <div class="achieve-box">
+      <div class="achieve-num">42<span>%</span></div>
+      <div class="achieve-label">Traffic Growth</div>
+      <div class="achieve-desc">Organic session increase for primary client</div>
+    </div>
+    <div class="achieve-box">
+      <div class="achieve-num">4</div>
+      <div class="achieve-label">Social Media Handling</div>
+      <div class="achieve-desc">Create online presence through social media management</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-label fade-up">What People Say</div>
+  <div class="section-title fade-up">Honest words from<br><em>real collaborators.</em></div>
+  <div class="test-grid fade-up">
+    <div class="test-card">
+      <span class="test-quote-mark">"</span>
+      <p>Vishakha has a solid grasp of SEO that goes beyond just placing keywords. She understands how articles connect to each other, and to the funnel. Her DSO and deduction management content is some of the most thorough we've published.</p>
+      <div class="test-author">
+        <strong>Content Manager, iNymbus</strong>
+        <span>Accounts Receivable Automation SaaS</span>
+      </div>
+    </div>
+    <div class="test-card">
+      <span class="test-quote-mark">"</span>
+      <p>What I appreciated most was that she didn't wait to be told what to do next. She'd come back with keyword data, a gap she spotted, a suggestion for a new article. For a small team, that kind of proactiveness is hard to find.</p>
+      <div class="test-author">
+        <strong>Founder, Smart Webtech</strong>
+        <span>Web & AI Technology Agency</span>
+      </div>
+    </div>
+    <div class="test-card">
+      <span class="test-quote-mark">"</span>
+      <p>The turnaround was reliable and the quality was consistent. She writes in a way that sounds like an expert without being impenetrable — our readers actually engage with the content, and the metrics back that up.</p>
+      <div class="test-author">
+        <strong>Marketing Lead, Tech Client</strong>
+        <span>B2B Technology Services</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-tag">
+    <span style="width:20px;height:1px;background:var(--accent);display:inline-block"></span>
+    Let's Work Together
+    <span style="width:20px;height:1px;background:var(--accent);display:inline-block"></span>
+  </div>
+  <div class="open-badge">
+    <span class="open-dot"></span>
+    Open to Freelance & Full-Time Roles
+  </div>
+  <h2>Have a content<br>problem? Let's<br><em>talk about it.</em></h2>
+  <p>
+    Whether you need a single article, an ongoing content partnership, or a full SEO audit — I'd rather have a real conversation than a long intake form.
+  </p>
+  <a href="mailto:vishakhapmuchhadiya@gmail.com" class="email-display" target="_blank">vishakhapmuchhadiya@gmail.com</a>
+  <div class="contact-actions">
+    <a href="mailto:vishakhapmuchhadiya@gmail.com" class="btn-primary" target="_blank">Send an Email</a>
+    <a href="https://www.linkedin.com/in/vishakha-muchhadiya-12436b313/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B6ZdaddHnSga5p1QBwUkijQ%3D%3D" target="_blank" class="btn-outline">LinkedIn Profile</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo">Vishakha Muchhadiya<span>.</span></a>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p>© 2025 Vishakha Muchhadiya. All rights reserved.</p>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  });
+  function animateRing() {
+    rx += (mx - rx - 18) * 0.12;
+    ry += (my - ry - 18) * 0.12;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Fade-up on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Case study toggle
+  function toggleCase(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+
+  // Portfolio filter
+  function filterWork(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.work-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Smooth nav shrink on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) { nav.style.padding = '0.9rem 4rem'; }
+    else { nav.style.padding = '1.4rem 4rem'; }
+  });
+</script>
+</body>
+</html>
