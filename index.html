@@ -184,18 +184,20 @@
     border: 1px solid var(--border);
   }
   
-  .hero-portrait-inner {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+ .hero-portrait-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, var(--warm) 0%, var(--cream) 50%, rgba(196,119,59,0.12) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-portrait-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7rem;
+    font-weight: 300;
+    color: var(--accent);
+    opacity: 0.4;
+    letter-spacing: -0.05em;
+  }
+  
   .hero-stats {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1px;
@@ -712,13 +714,12 @@
       <a href="#contact" class="btn-outline">Let's Talk</a>
     </div>
   </div>
-  <div class="hero-right">
-  <div class="hero-portrait">
-    <div class="hero-portrait-inner">
-      <img src="your-image.jpg" alt="Vishakha Muchhadiya" class="hero-image">
+ <div class="hero-right">
+    <div class="hero-portrait">
+      <div class="hero-portrait-inner">
+        <div class="hero-portrait-monogram">VM</div>
+      </div>
     </div>
-  </div>
-</div>
     <div class="hero-stats">
       <div class="stat-box">
         <div class="stat-num">30+<span style="font-size:1.2rem;color:var(--accent)">+</span></div>
